@@ -34,6 +34,22 @@ static const GLfloat g_vertex_buffer_data[] = {
 	0.0f, 1.0f, 0.0f,
 };
 
+static void error_callback(int /*error*/, const char* description)
+{
+	std::cerr << "Error: " << description << std::endl;
+}
+
+void APIENTRY opengl_error_callback(GLenum source,
+	GLenum type,
+	GLuint id,
+	GLenum severity,
+	GLsizei length,
+	const GLchar* message,
+	const void* userParam)
+{
+	std::cout << message << std::endl;
+}
+
 optional<GLFWwindow*> Setup() {
 	if (!glfwInit()) {
 		fprintf(stderr, "Failed to initialize GLFW\n");
@@ -44,6 +60,7 @@ optional<GLFWwindow*> Setup() {
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4); // On veut OpenGL 4.5
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // On ne veut pas l'ancien OpenGL
+	glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
 
 	GLFWwindow* window;
 	window = glfwCreateWindow(1024, 768, "Tutorial", NULL, NULL);
@@ -84,12 +101,16 @@ int main(int argc, char* argv[]) {
 	// Setup
 
 	GLFWwindow* window;
+	glfwSetErrorCallback(error_callback);
+
 	if (auto windowOpt = Setup()) {
 		window = windowOpt.value();
 	}
 	else {
 		return -1;
 	}
+	glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
+	glDebugMessageCallback(opengl_error_callback, nullptr);
 
 	// Object for drawing
 	GLuint VertexArrayID;
@@ -116,6 +137,8 @@ int main(int argc, char* argv[]) {
 
 	int mode = 0;
 
+	glUseProgram(programID);
+
 	int width, height, nrChannels;
 	unsigned char* data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
 	GLuint textures;
@@ -141,7 +164,6 @@ int main(int argc, char* argv[]) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		// Use our shader
-		glUseProgram(programID);
 		int w, h;
 		glfwGetFramebufferSize(window, &w, &h);
 		glViewport(0, 0, w, h);
