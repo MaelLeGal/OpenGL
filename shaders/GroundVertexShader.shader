@@ -4,7 +4,7 @@ layout(location = 0) in vec3 vertexPosition_modelspace;
 in vec3 color;
 in vec2 uv;
 in vec3 normal;
-in vec2 aTexCoord;
+in vec2 aGroundTexCoord;
 
 out vec3 color_out;
 out vec2 uv_out;
@@ -17,5 +17,5 @@ void main()
 	color_out = color;
 	uv_out = uv;
 	normal_out = normal;
-	TexCoord = aTexCoord;
+	TexCoord = aGroundTexCoord;
 }

@@ -29,26 +29,30 @@ static const std::vector<vertex_struct> vertices{
 	{{0.0f,0.0f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{0.0f,0.0f}},
 	{{1.0f,0.0f,0.0f}, {0.0f,1.0f,0.0f}, {1.0f,0.0f}, {0.0f,0.0f,-1.0f},{1.0f,0.0f}},
 	{{0.0f,1.0f,0.0f}, {0.0f,0.0f,1.0f}, {0.0f,1.0f}, {0.0f,0.0f,-1.0f},{0.0f,1.0f}},
+
+	{{1.0f,0.0f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{1.0f,0.0f}},
+	{{1.0f,1.0f,0.0f}, {0.0f,1.0f,0.0f}, {1.0f,0.0f}, {0.0f,0.0f,-1.0f},{1.0f,1.0f}},
+	{{0.0f,1.0f,0.0f}, {0.0f,0.0f,1.0f}, {0.0f,1.0f}, {0.0f,0.0f,-1.0f},{0.0f,1.0f}},
 };
 
 static const std::vector<vertex_struct> ground{
-	{{-1.0f,-0.8f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{0.0f,0.0f}},
-	{{-1.0f,-1.0f,0.0f}, {0.0f,1.0f,0.0f}, {1.0f,0.0f}, {0.0f,0.0f,-1.0f},{1.0f,0.0f}},
-	{{1.0f,-0.8f,0.0f}, {0.0f,0.0f,1.0f}, {0.0f,1.0f}, {0.0f,0.0f,-1.0f},{0.0f,1.0f}},
+	{{-1.0f,-0.8f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{1.0f,0.0f}},
+	{{-1.0f,-1.0f,0.0f}, {0.0f,1.0f,0.0f}, {1.0f,0.0f}, {0.0f,0.0f,-1.0f},{1.0f,1.0f}},
+	{{1.0f,-0.8f,0.0f}, {0.0f,0.0f,1.0f}, {0.0f,1.0f}, {0.0f,0.0f,-1.0f},{0.0f,0.0f}},
 
-	{{-1.0f,-1.0f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,1.0f}, {0.0f,0.0f,-1.0f},{0.0f,0.0f}},
-	{{1.0f,-0.8f,0.0f}, {0.0f,1.0f,0.0f}, {1.0f,1.0f}, {0.0f,0.0f,-1.0f},{1.0f,0.0f}},
+	{{-1.0f,-1.0f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,1.0f}, {0.0f,0.0f,-1.0f},{1.0f,1.0f}},
+	{{1.0f,-0.8f,0.0f}, {0.0f,1.0f,0.0f}, {1.0f,1.0f}, {0.0f,0.0f,-1.0f},{0.0f,0.0f}},
 	{{1.0f,-1.0f,0.0f}, {0.0f,0.0f,1.0f}, {1.0f,0.0f}, {0.0f,0.0f,-1.0f},{0.0f,1.0f}},
 };
 
 static const std::vector<vertex_struct> player{
-	{{-0.2f,-0.8f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{0.0f,0.0f}},
-	{{-0.2f,-0.4f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{0.0f,0.0f}},
-	{{0.2f,-0.4f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{0.0f,0.0f}},
+	{{-0.25f,-1.0f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{1.0f,1.0f}},
+	{{-0.25f,-0.5f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{1.0f,0.0f}},
+	{{0.25f,-0.5f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{0.0f,0.0f}},
 
-	{{0.2f,-0.8f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{0.0f,0.0f}},
-	{{0.2f,-0.4f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{0.0f,0.0f}},
-	{{-0.2f,-0.8f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{0.0f,0.0f}}
+	{{0.25f,-1.0f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{0.0f,1.0f}},
+	{{0.25f,-0.5f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{0.0f,0.0f}},
+	{{-0.25f,-1.0f,0.0f}, {1.0f,0.0f,0.0f}, {0.0f,0.0f}, {0.0f,0.0f,-1.0f},{1.0f,1.0f}}
 };
 
 static const GLfloat g_vertex_buffer_data[] = {
@@ -171,7 +175,7 @@ int main(int argc, char* argv[]) {
 	GLuint height_uniform_ground_location = glGetUniformLocation(groundProgramID, "height");
 	GLuint mode_ground_location = glGetUniformLocation(groundProgramID, "mode");
 
-	GLuint player_model_location = glGetUniformLocation(playerProgramID, "model");
+	GLuint player_model_location = glGetUniformLocation(playerProgramID, "modelPlayer");
 	GLuint player_view_location = glGetUniformLocation(playerProgramID, "view");
 	GLuint player_proj_location = glGetUniformLocation(playerProgramID, "proj");
 
@@ -180,27 +184,44 @@ int main(int argc, char* argv[]) {
 	int mode = 0;
 
 	int width, height, nrChannels;
-	unsigned char* data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+	unsigned char* data = stbi_load("mario_coin.png", &width, &height, &nrChannels, 0);
 	GLuint texture_color_location = glGetUniformLocation(programID, "colorTexture");
 	GLuint texture_color_ground_location = glGetUniformLocation(groundProgramID, "colorTexture");
 	GLuint texture_color_player_location = glGetUniformLocation(playerProgramID, "colorTexture");
-	GLuint textures;
+	GLuint textures[3];
+	glCreateTextures(GL_TEXTURE_2D, 3, textures);
 	if (data) {
-		glCreateTextures(GL_TEXTURE_2D, 1, &textures);
-		glTextureStorage2D(textures, 1, GL_RGB8, width, height);
-		glTextureSubImage2D(textures, 0, 0, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE, data);
-
-		glBindTextureUnit(0, textures);
+		glTextureStorage2D(textures[0], 1, GL_RGBA8, width, height);
+		glTextureSubImage2D(textures[0], 0, 0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE, data);
 	}
 	else {
 		std::cout << "Failed to load texture" << std::endl;
 	}
-
+	stbi_image_free(data);
+	data = stbi_load("ground.png", &width, &height, &nrChannels, 0);
+	if (data) {
+		glTextureStorage2D(textures[1], 1, GL_RGB8, width, height);
+		glTextureSubImage2D(textures[1], 0, 0, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE, data);	
+	}
+	else {
+		std::cout << "Failed to load texture" << std::endl;
+	}
+	stbi_image_free(data);
+	data = stbi_load("geometry-dash.png", &width, &height, &nrChannels, 0);
+	if (data) {
+		glTextureStorage2D(textures[2], 1, GL_RGB8, width, height);
+		glTextureSubImage2D(textures[2], 0, 0, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE, data);
+	}
+	else {
+		std::cout << "Failed to load texture" << std::endl;
+	}
 	stbi_image_free(data);
 
 
 	glm::mat4 modelPlayer = glm::mat4(1.0f);
 	// Start loop
+	double lastTime = glfwGetTime();
+	bool grounded = true;
 	do {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -212,6 +233,7 @@ int main(int argc, char* argv[]) {
 		glm::mat4 ortho = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
 		glm::mat4 proj = glm::perspective(glm::radians(45.0f), (float)w / (float)h, 0.1f, 100.0f);
 		glm::mat4 model = glm::mat4(1.0f);
+		model = glm::rotate(model, (float)glfwGetTime(), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 
 		glm::mat4 view = glm::mat4(1.0f);
@@ -235,6 +257,7 @@ int main(int argc, char* argv[]) {
 		}
 
 		glUseProgram(programID);
+		glBindTextureUnit(0, textures[0]);
 
 		glUniform1f(scale_uniform_location, scale_uniform);
 		glUniform1f(scale_frag_uniform_location, scale_uniform);
@@ -312,8 +335,8 @@ int main(int argc, char* argv[]) {
 		
 
 
-
 		glUseProgram(groundProgramID);
+		glBindTextureUnit(0, textures[1]);
 
 		glUniform1f(scale_frag_uniform_ground_location, scale_uniform);
 		glUniform1i(width_uniform_ground_location, w);
@@ -368,7 +391,7 @@ int main(int argc, char* argv[]) {
 		);
 		glEnableVertexAttribArray(normalLocation);
 
-		textureCoordinatesLocation = glGetAttribLocation(groundProgramID, "aTexCoord");
+		textureCoordinatesLocation = glGetAttribLocation(groundProgramID, "aGroundTexCoord");
 		glVertexAttribPointer(
 			textureCoordinatesLocation,					// attribute 0. No particular reason for 0, but must match the layout in the shader.
 			2,					// size
@@ -379,15 +402,37 @@ int main(int argc, char* argv[]) {
 		);
 		glEnableVertexAttribArray(textureCoordinatesLocation);
 
-		glDrawArrays(GL_TRIANGLES, vertices.size(), vertices.size()+ground.size()); // Starting from vertex 0; 3 vertices total -> 1 triangle
+		glDrawArrays(GL_TRIANGLES, vertices.size(), ground.size()); // Starting from vertex 0; 3 vertices total -> 1 triangle
 
 
 
 		glUseProgram(playerProgramID);
+		glBindTextureUnit(0, textures[2]);
 
-		
+		double currentTime = glfwGetTime();
+		float deltaTime = float(currentTime - lastTime);
+		lastTime = currentTime;
+
 		if (glfwGetKey(window, GLFW_KEY_D)) {
-			glm::translate(modelPlayer, glm::vec3(0.3f, 0.0f, 0.0f));
+			modelPlayer = glm::translate(modelPlayer, glm::vec3(0.5f, 0.0f, 0.0f) * deltaTime);
+		}
+
+		if (glfwGetKey(window, GLFW_KEY_A)) {
+			modelPlayer = glm::translate(modelPlayer, glm::vec3(-0.5f, 0.0f, 0.0f) * deltaTime);
+		}
+
+		if (glfwGetKey(window, GLFW_KEY_SPACE) && grounded) {
+			modelPlayer = glm::translate(modelPlayer, glm::vec3(0.0f, 0.5f, 0.0f));
+			grounded = false;
+		}
+		else if (!grounded) {
+			modelPlayer = glm::translate(modelPlayer, glm::vec3(0.0f, -0.2f, 0.0f) * deltaTime);
+		}
+		
+
+		if ((float)modelPlayer[3].y <= 0.0f && !grounded) {
+			modelPlayer[3].y = 0.0f;
+			grounded = true;
 		}
 
 		glUniform1i(texture_color_player_location, 0);
@@ -413,39 +458,6 @@ int main(int argc, char* argv[]) {
 
 		//EnableAttrib<vertex_struct>("vertexPosition_modelspace", programID, 3);
 
-		colorLocation = glGetAttribLocation(playerProgramID, "color");
-		glVertexAttribPointer(
-			colorLocation,					// attribute 0. No particular reason for 0, but must match the layout in the shader.
-			3,					// size
-			GL_FLOAT,			// type
-			GL_FALSE,			// normalized?
-			sizeof(vertex_struct),					// stride
-			(void*)offsetof(vertex_struct, vertex_struct::color) // array buffer offset
-		);
-		glEnableVertexAttribArray(colorLocation);
-
-		uvLocation = glGetAttribLocation(playerProgramID, "uv");
-		glVertexAttribPointer(
-			uvLocation,			// attribute 0. No particular reason for 0, but must match the layout in the shader.
-			2,					// size
-			GL_FLOAT,			// type
-			GL_FALSE,			// normalized?
-			sizeof(vertex_struct),					// stride
-			(void*)offsetof(vertex_struct, vertex_struct::uv)			// array buffer offset
-		);
-		glEnableVertexAttribArray(uvLocation);
-
-		normalLocation = glGetAttribLocation(playerProgramID, "normal");
-		glVertexAttribPointer(
-			normalLocation,					// attribute 0. No particular reason for 0, but must match the layout in the shader.
-			3,					// size
-			GL_FLOAT,			// type
-			GL_FALSE,			// normalized?
-			sizeof(vertex_struct),					// stride
-			(void*)offsetof(vertex_struct, vertex_struct::normal)			// array buffer offset
-		);
-		glEnableVertexAttribArray(normalLocation);
-
 		textureCoordinatesLocation = glGetAttribLocation(playerProgramID, "aTexCoord");
 		glVertexAttribPointer(
 			textureCoordinatesLocation,					// attribute 0. No particular reason for 0, but must match the layout in the shader.
@@ -457,7 +469,7 @@ int main(int argc, char* argv[]) {
 		);
 		glEnableVertexAttribArray(textureCoordinatesLocation);
 
-		glDrawArrays(GL_TRIANGLES, vertices.size()+ground.size(), vertices.size() + ground.size() + player.size());
+		glDrawArrays(GL_TRIANGLES, vertices.size()+ground.size(), player.size());
 		glDisableVertexAttribArray(0);
 
 		glfwSwapBuffers(window);

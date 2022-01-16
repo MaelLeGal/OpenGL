@@ -27,7 +27,7 @@ void main()
 	}
 	else {
 		//color = vec4(abs(scale_frag) * (gl_FragCoord.x / width), abs(scale_frag) * (gl_FragCoord.y / height), abs(scale_frag) * 1, 1);
-		//color = texture(colorTexture, TexCoord);
-		color = vec4(0,0,0,1);
+		color = texture(colorTexture, TexCoord);
+		//color = vec4(0,0,0,1);
 	}
 }
